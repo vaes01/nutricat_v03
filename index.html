@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NutriCat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🐱 NutriCat</h1>
+    <div class="hero" id="hero"></div>
+
+<div class="toggle-row">
+    <div class="toggle-container">
+        <label id="darkModeLabel" for="darkToggle">Dark Mode</label>
+        <div class="toggle-switch">
+            <input type="checkbox" id="darkToggle" />
+            <div class="toggle-thumb"></div>
+        </div>
+    </div>
+
+    <div class="toggle-container">
+        <label id="langLabel" for="langToggle">English</label>
+        <div class="toggle-switch">
+            <input type="checkbox" id="langToggle" />
+            <div class="toggle-thumb"></div>
+        </div>
+    </div>
+</div>
+
+<label id="weightLabel"></label>
+<input type="range" id="weightRange" min="1" max="20" step="0.1" value="4.5">
+<input type="number" id="weight" step="0.1">
+
+<label id="typeLabel"></label>
+<select id="type">
+    <option value="1.2" data-en="Neutered adult" data-pt="Adulto castrado"></option>
+    <option value="1.4" data-en="Intact adult" data-pt="Adulto não castrado"></option>
+    <option value="1.0" data-en="Inactive / Obese prone" data-pt="Inativo / propenso à obesidade"></option>
+    <option value="0.8" data-en="Weight loss" data-pt="Perda de peso"></option>
+    <option value="2.5" data-en="Kitten" data-pt="Filhote"></option>
+</select>
+
+<label id="productLabel"></label>
+<select id="foodSelect"></select>
+
+<!-- <div id="foodImageContainer"></div> -->
+<!-- IMPLEMENT IMAGE LATER -->
+ 
+<label id="foodLabel"></label>
+<input type="range" id="foodRange" min="500" max="5000" step="10" value="3700">
+<input type="number" id="foodEnergy" min="500" max="5000" step="10">
+
+<div class="result" id="result"></div>
+
+<div class="disclaimer" id="disclaimer"></div>
+
+</div>
+
+<script src="food.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

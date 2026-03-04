@@ -1,0 +1,250 @@
+/* ============================= */
+/* Root Variables for Pink Theme */
+/* ============================= */
+:root {
+    --primary: #ff5e99;  /* Pink primary color */
+    --secondary: #f9a7d6; /* Light pink */
+    --bg-light: #fef2f8;  /* Light background */
+    --bg-dark: #2c1a3c;   /* Dark background */
+    --card-light: white;
+    --card-dark: #3a1a45;  /* Dark card background */
+    --text-light: #333;
+    --text-dark: #f2f2f2;
+    --slider-track-light: #f0c1d9;
+    --slider-track-dark: #4b1f36;
+}
+
+/* ============================= */
+/* Global Styles */
+/* ============================= */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--bg-light);
+    color: var(--text-light);
+    transition: 0.3s;
+    display: flex;
+    justify-content: center;
+    padding: 30px 10px;
+}
+
+body.dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+/* ============================= */
+/* Container Styles */
+/* ============================= */
+.container {
+    width: 100%;
+    max-width: 550px;
+    background: var(--card-light);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+body.dark .container {
+    background: var(--card-dark);
+}
+
+/* ============================= */
+/* Typography Styles */
+/* ============================= */
+h1 {
+    text-align: center;
+    font-size: 32px;
+}
+
+.hero {
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 15px;
+    display: block;
+}
+
+/* ============================= */
+/* Input Fields and Buttons */
+/* ============================= */
+input,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    margin-top: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* ============================= */
+/* Toggle Styles (Dark Mode + Language) */
+/* ============================= */
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.toggle-row label {
+    margin-right: 10px;
+}
+
+/* ============================= */
+/* Result Box Styles */
+/* ============================= */
+.result {
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 15px;
+    background: #ffd9ee; /* Light pink for light mode */
+    text-align: center;
+}
+
+/* Dark mode result box */
+body.dark .result {
+    background: rgba(255, 105, 180, 0.1); /* Darker pink for dark mode */
+}
+
+/* Disclaimer */
+.disclaimer {
+    margin-top: 25px;
+    font-size: 12px;
+    opacity: 0.7;
+    text-align: center;
+}
+
+/* ============================= */
+/* Modern Slider Styles */
+/* ============================= */
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: linear-gradient(
+        to left,
+        var(--primary) 0%,
+        var(--primary) 0%,
+        var(--slider-track-light) 50%,
+        var(--slider-track-light) 100%
+    );
+    outline: none;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+/* WebKit Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+/* Firefox Thumb */
+input[type="range"]::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: white;
+    border: 3px solid var(--primary);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+/* Firefox Track */
+input[type="range"]::-moz-range-track {
+    height: 8px;
+    border-radius: 999px;
+    background: var(--slider-track-light);
+}
+
+/* Dark Mode Adjustments for Slider */
+body.dark input[type="range"] {
+    background: linear-gradient(
+        to right,
+        var(--primary) 0%,
+        var(--primary) 0%,
+        var(--slider-track-dark) 50%,
+        var(--slider-track-dark) 100%
+    );
+}
+
+body.dark input[type="range"]::-webkit-slider-thumb {
+    background: var(--card-dark);
+}
+
+body.dark input[type="range"]::-moz-range-thumb {
+    background: var(--card-dark);
+}
+
+/* ============================= */
+/* Toggle Switch Styles (Updated) */
+/* ============================= */
+.toggle-switch {
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    background: var(--primary);
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    position: absolute;
+}
+
+.toggle-switch .toggle-thumb {
+    width: 25px;
+    height: 25px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform 0.3s ease;
+}
+
+.toggle-switch input:checked + .toggle-thumb {
+    transform: translateX(30px);
+}
+
+input[type="range"]:checked {
+    background-color: var(--primary);
+}
